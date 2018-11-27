@@ -28,9 +28,10 @@ class Me extends ApiBase
         return $request;
     }
 
-    public function readProfile()
+    public function readProfile($token)
     {
         $request = $this->request->setUri($this->apiList['readProfile']);
+        $request->setToken($token);
         $request = $request->setMethod('GET');
         $request = $request->request();
         return $request;
